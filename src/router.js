@@ -4,7 +4,7 @@ const routes = [
   {
     path: "/",
     name: "users",
-    component: () => import("./components/UserList")
+    component: () => import("./components/Home")
   },
   {
     path: "/users/:id",
