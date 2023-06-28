@@ -2,8 +2,7 @@
   <div>
     <div v-if="users">
       <div v-for="user in users" :key="user.id">
-        <p>{{ user.name }}</p>
-        <p>{{ user.username }}</p>
+        <UserDetail :user="user" />
       </div>
 
     </div>
@@ -11,8 +10,11 @@
 </template>
 
 <script>
+import UserDetail from './UserDetail.vue'
 export default {
-  components: {},
+  components: {
+    UserDetail,
+  },
   data() {
     return {
       users: []
