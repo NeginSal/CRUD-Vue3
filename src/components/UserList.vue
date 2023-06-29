@@ -2,7 +2,7 @@
   <div>
     <div v-if="users">
       <div v-for="user in users" :key="user.id">
-        <UserDetail :user="user" />
+        <UserDetail :user="user" @delete="handleDelete" />
       </div>
 
     </div>
@@ -10,7 +10,9 @@
 </template>
 
 <script>
-import UserDetail from './UserDetail.vue'
+import axios from 'axios';
+import UserDetail from './UserDetail.vue';
+
 export default {
   components: {
     UserDetail,
@@ -21,10 +23,15 @@ export default {
     }
   },
   mounted() {
-    fetch('http://localhost:8000/users')
-      .then(res => res.json())
-      .then(data => this.users = data)
-      .catch(err => console.log(err.message))
-  }
+    axios
+      .get('http://localhost:8000/users')
+      .then((res) => { this.users = res.data })
+      .catch(err => console.log(err))
+  },
+  methods: {
+    handleDelete(id) {
+      this.users = this.users.filter((user) => { return user.id !== id })
+    }
+  },
 }
 </script>
