@@ -17,21 +17,22 @@ export default {
   components: {
     UserDetail,
   },
-  data() {
-    return {
-      users: []
-    }
-  },
-  mounted() {
-    axios
-      .get('http://localhost:8000/users')
-      .then((res) => { this.users = res.data })
-      .catch(err => console.log(err))
-  },
+  props:['users'],
+  // data() {
+  //   return {
+  //     users: []
+  //   }
+  // },
+  // mounted() {
+  //   axios
+  //     .get('http://localhost:8000/users')
+  //     .then((res) => { this.users = res.data })
+  //     .catch(err => console.log(err))
+  // },
   methods: {
     handleDelete(id) {
       this.users = this.users.filter((user) => { return user.id !== id })
-    }
+    },
   },
 }
 </script>

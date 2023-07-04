@@ -1,21 +1,30 @@
 <template>
   <div>
-    <UserList/>
-    <AddUser/>
+    <UserList :users="users"/>
+    <AddUser :users="users"/>
   </div>
 </template>
 
 <script>
 import  UserList  from "./UserList.vue";
 import  AddUser  from "./AddUser.vue";
+import axios from 'axios';
 
 export default {
   components: {
     UserList,
     AddUser,
   },
-  setup() {
-    return {};
+  data() {
+    return {
+      users: []
+    }
+  },
+  mounted() {
+    axios
+      .get('http://localhost:8000/users')
+      .then((res) => { this.users = res.data })
+      .catch(err => console.log(err))
   },
 };
 </script>
