@@ -35,14 +35,16 @@ export default {
       }
       console.log(this.name, this.username)
       axios
-        .post('http://localhost:8000/users',newUser )
-        .then(() => {this.user = this.users.push(newUser) })
+        .post('http://localhost:8000/users', newUser)
+        .then(() => { this.user = this.users.push(newUser) })
         .catch((err) => console.log(err))
       // axios.post("http://localhost:8000/users", newUser)
       //   .then(response => this.user = response.data.id)
-    
+      this.name = "",
+      this.username = ""
 
-        
+
+
     }
   }
 }
