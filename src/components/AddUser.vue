@@ -29,23 +29,18 @@ export default {
   },
   methods: {
     handleSubmit() {
-      let newUser = {
-        name: this.name,
-        username: this.username
-      }
-      console.log(this.name, this.username)
       axios
-        .post('http://localhost:8000/users', newUser)
-        .then(() => { this.user = this.users.push(newUser) })
-        .catch((err) => console.log(err))
-      // axios.post("http://localhost:8000/users", newUser)
-      //   .then(response => this.user = response.data.id)
-      this.name = "",
-      this.username = ""
-
-
-
-    }
+        .post("http://localhost:8000/users", {
+          name: this.name,
+          username: this.username,
+        })
+        .then((response) => {
+          const data = response.data;
+          this.users.push(data);
+          this.name = "";
+          this.username = "";
+        });
+    },
   }
 }
 </script>
