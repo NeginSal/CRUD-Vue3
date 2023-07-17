@@ -7,15 +7,22 @@ const routes = [
     component: () => import("./components/Home")
   },
   {
-    path: "/users/:id",
+    path: "/user/:id",
     name: "editUser",
     component: () => import("./components/EditUser")
+    // props: true
   },
   {
     path: "/addUser",
     name: "addUser",
     component: () => import("./components/AddUser")
+  },
+  {
+    path: "/user/:id",
+    name: "userDetail",
+    component: () => import("./components/UserDetail")
   }
+  
 ];
 
 const router = createRouter({
