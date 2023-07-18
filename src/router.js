@@ -18,7 +18,7 @@ const routes = [
     component: () => import("./components/AddUser")
   },
   {
-    path: "/user/:id",
+    path: "/users/:id",
     name: "userDetail",
     component: () => import("./components/UserDetail")
   }

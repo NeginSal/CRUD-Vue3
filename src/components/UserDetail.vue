@@ -1,8 +1,7 @@
 <template>
   <div>
     <div>
-      <p>{{ user.name }}</p>
-      <p>{{ user.username }}</p>
+       {{ id }}
     </div>
   </div>
 </template>
@@ -10,7 +9,12 @@
 <script>
 
 export default {
-  props: ['user'],
+  data() {
+    return {
+      id: this.$route.params.id,
+    }
+  }
+
 }
 </script>
 

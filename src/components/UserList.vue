@@ -2,7 +2,9 @@
   <div v-if="users.length">
     <div v-for="user in users" :key="user.id">
       <div>
-        <p>{{ user.name }}</p>
+        <router-link :to="`/users/${user.id}`">
+          <p>{{ user.name }}</p>
+        </router-link>
         <p>{{ user.username }}</p>
       </div>
 
@@ -43,7 +45,5 @@ export default {
       this.$router.push(`/user/${id}`)
     }
   }
-
-
 }
 </script>
