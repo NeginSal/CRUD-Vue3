@@ -1,15 +1,17 @@
 <template>
-  <div v-if="users.length">
-    <div v-for="user in  users " :key="user.id">
-      <div>
-        <router-link :to="'/users/'+user.id">
-          <p>{{ user.name }}</p>
+  <div v-if="users.length" class='py-5'>
+    <div v-for="user in  users " :key="user.id" class='flex justify-between border-b-4'>
+      <div class="flex ">
+        <router-link :to="'/users/' + user.id">
+          <p class='my-3 px-3'>{{ user.name }}</p>
         </router-link>
-        <p>{{ user.username }}</p>
+        <p class='my-3 px-3'>{{ user.username }}</p>
       </div>
-      <div>
-        <p @click="updateUser(user.id)">EDIT</p>
-        <p @click="deleteUser(user.id)">DELETE</p>
+      <div class="flex ">
+        <p @click="updateUser(user.id)" class='mx-2 my-3 px-2 py-1 text-green-800
+     hover:bg-green-400 hover:rounded-md hover:border hover:border-green-800'>EDIT</p>
+        <p @click="deleteUser(user.id)" class='my-3 px-2 py-1 text-red-800 
+     hover:bg-red-400 hover:rounded-md hover:border hover:border-red-800'>DELETE</p>
       </div>
     </div>
   </div>

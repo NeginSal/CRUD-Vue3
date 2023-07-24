@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <p>{{ user ? user.name : '' }}</p>
-    <p>{{ user ? user.username : '' }}</p>
+  <div class="max-w-xl pb-8 mx-auto px-5 bg-slate-100">
+    <div class="flex flex-col text-center py-5 ">
+      <p class='px-3 py-3 border-b-4'>Name : {{ user ? user.name : '' }}</p>
+      <p class='px-3 py-3'>UserName : {{ user ? user.username : '' }}</p>
+    </div>
   </div>
 </template>
 
@@ -26,7 +28,6 @@ export default {
         .catch(err => console.log(err))
     }
   }
-
 }
 </script>
 

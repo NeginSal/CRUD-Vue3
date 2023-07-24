@@ -1,14 +1,14 @@
 <template>
   <form @submit.prevent="handleSubmit">
-    <div className='flex flex-col justify-center items-center sm:flex-row sm:justify-evenly'>
-      <div className='mb-2'>
-        <input className='px-3 py-1 rounded-full border border-gray-600' v-model="name" />
+    <div class='flex flex-col justify-center items-center '>
+      <div class='mb-2'>
+        <input class='px-3 py-1 rounded-full border border-gray-600' v-model="name" placeholder="Name" />
       </div>
-      <div className='mb-2'>
-        <input className='px-3 py-1 rounded-full border border-gray-600' v-model="username" />
+      <div class='mb-2'>
+        <input class='px-3 py-1 rounded-full border border-gray-600' v-model="username" placeholder="UserName" />
       </div>
-      <div className='mb-2'>
-        <button className="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">
+      <div class='mb-2'>
+        <button class="bg-blue-500 hover:bg-blue-700 text-white py-1 px-3 rounded-full">
           Add
         </button>
       </div>

@@ -1,10 +1,18 @@
 <template>
-  <p>{{ id }}</p>
-  <form @submit.prevent="handleSubmit">
-    <input v-model="name" required />
-    <input v-model="username" required />
-    <button>Update User</button>
-  </form>
+  <div class="flex items-center justify-center">
+    <form @submit.prevent="handleSubmit">
+      <div class='flex flex-col justify-center items-center bg-slate-100 p-10 mt-10 rounded-md'>
+        <input v-model="name" class='my-2 px-5 py-1 rounded-full border border-gray-600' />
+        <input v-model="username" class='my-2 px-5 py-1 rounded-full border border-gray-600' />
+      </div>
+      <div class="flex my-2 mx-20">
+        <button class='text-white mx-1 px-5 py-1 rounded-full bg-blue-500 hover:bg-blue-700'>Update User</button>
+        <button class='text-white mx-1 px-5 py-1 rounded-full bg-blue-500 hover:bg-blue-700'
+          @click="backToHome">Cancel</button>
+      </div>
+
+    </form>
+  </div>
 </template>
 
 <script>
@@ -36,6 +44,9 @@ export default {
         .then(() => {
           this.$router.push("/");
         })
+    },
+    backToHome() {
+      this.$router.push('/')
     }
   },
 }

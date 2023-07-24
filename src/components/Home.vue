@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="max-w-xl pb-8 mx-auto px-5 bg-slate-100">
     <UserList :users="users" @userDeleted="handleUserDeleted" />
     <AddUser :users="users" />
   </div>
@@ -37,4 +37,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
