@@ -35,4 +35,4 @@ open a new terminal and run this command to start json-server.
 
 ## Learn More :open_book:
 
-You can learn more about this project in this link [](...).
+You can learn more about this project in this link [Vue3 crud app with json-server and axios](https://dev.to/negin/vue3-crud-app-with-json-server-and-axios-5haf).
