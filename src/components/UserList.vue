@@ -19,12 +19,12 @@
 
 <script>
 import axios from 'axios';
-import UserDetail from './UserDetail.vue';
+// import UserDetail from './UserDetail.vue';
 
 export default {
-  components: {
-    UserDetail,
-  },
+  // components: {
+  //   UserDetail,
+  // },
 
   props: ['users'],
   methods: {

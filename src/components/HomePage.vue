@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-xl pb-8 mx-auto px-5 bg-slate-100">
     <UserList :users="users" @userDeleted="handleUserDeleted" />
-    <AddUser :users="users" />
+    <AddUser :users="users" @add="addUser" />
   </div>
 </template>
 
@@ -26,14 +26,16 @@ export default {
   methods: {
     fetchUsers() {
       axios
-        .get('http://localhost:8000/users')
-        .then((res) => { this.users = res.data })
-        .catch(err => console.log(err))
+          .get('http://localhost:8000/users')
+          .then((res) => { this.users = res.data })
+          .catch(err => console.log(err))
     },
     handleUserDeleted(userId) {
       this.users = this.users.filter((user) => user.id !== userId);
+    },
+    addUser (user) {
+      this.users.push(user);
     }
   }
 };
 </script>
-
