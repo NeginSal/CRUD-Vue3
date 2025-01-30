@@ -20,7 +20,9 @@
 import axios from 'axios';
 
 export default {
-  props: ['users'],
+  props: {
+    'users': []
+  },
   data() {
     return {
       name: '',
@@ -36,7 +38,7 @@ export default {
         })
         .then((response) => {
           const data = response.data;
-          this.users.push(data);
+          this.$emit('add', data);
           this.name = "";
           this.username = "";
         });
